@@ -599,30 +599,35 @@
           <!-- Interactive Contact Form -->
           <div class="contact-form-card glass-card reveal-on-scroll delay-1">
             <h3>Send a Direct Note</h3>
-            <form id="contact-form">
+            <form id="contact-form" action="https://formsubmit.co/rathodsakshi290@gmail.com" method="POST">
+              <!-- FormSubmit Anti-Spam & Delivery Options -->
+              <input type="text" name="_honey" style="display:none" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
               <div class="form-group">
                 <label for="form-name">Your Name *</label>
-                <input type="text" id="form-name" class="form-control" placeholder="e.g. John Doe" required />
+                <input type="text" id="form-name" name="name" class="form-control" placeholder="e.g. John Doe" required />
               </div>
 
               <div class="form-group">
                 <label for="form-email">Your Email Address *</label>
-                <input type="email" id="form-email" class="form-control" placeholder="john@example.com" required />
+                <input type="email" id="form-email" name="email" class="form-control" placeholder="john@example.com" required />
               </div>
 
               <div class="form-group">
                 <label for="form-subject">Subject / Project Type</label>
-                <input type="text" id="form-subject" class="form-control"
+                <input type="text" id="form-subject" name="_subject" class="form-control"
                   placeholder="e.g. Data Analyst Role / Dashboard Inquiry" />
               </div>
 
               <div class="form-group">
                 <label for="form-message">Message *</label>
-                <textarea id="form-message" class="form-control"
+                <textarea id="form-message" name="message" class="form-control"
                   placeholder="Tell me about your team, project, or data requirements..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <button type="submit" id="submit-contact-btn" class="btn btn-primary" style="width: 100%;">
                 <i data-lucide="send"></i>
                 <span>Send Message</span>
               </button>
