@@ -925,19 +925,12 @@ function initResumeModal() {
 window.openResumeModal = function () {
   const modal = document.getElementById("resume-modal");
   const modalBody = document.getElementById("resume-modal-body");
-  if (!modal || !modalBody || !window.portfolioData) return;
-
-  const p = window.portfolioData.personal;
-  const exp = window.portfolioData.experience;
-  const edu = window.portfolioData.education;
-  const skills = window.portfolioData.skills;
-  const certs = window.portfolioData.certifications;
-  const projects = window.portfolioData.projects;
+  if (!modal || !modalBody) return;
 
   modalBody.innerHTML = `
     <div class="resume-header-actions">
       <span class="timeline-period-badge" style="background: var(--bg-card-solid);">
-        <i data-lucide="file-text" style="width: 13px; height: 13px; display: inline-block;"></i> Executive ATS Curriculum Vitae
+        <i data-lucide="file-text" style="width: 13px; height: 13px; display: inline-block;"></i> Official Resume &bull; Sakshi Rathod
       </span>
       <div style="display: flex; gap: 0.6rem;">
         <button class="btn btn-sm btn-primary" onclick="window.print()">
@@ -949,86 +942,169 @@ window.openResumeModal = function () {
       </div>
     </div>
 
-    <div class="resume-doc">
-      <h1>${p.name}</h1>
-      <div class="resume-title-sub">${p.role} &bull; B.Tech AI (9.9/10 CGPA)</div>
-      
-      <div class="resume-contact-bar">
-        <span><i data-lucide="mail" style="width: 13px; height: 13px; display: inline-block;"></i> ${p.email}</span>
-        <span><i data-lucide="phone" style="width: 13px; height: 13px; display: inline-block;"></i> ${p.phone}</span>
-        <span><i data-lucide="map-pin" style="width: 13px; height: 13px; display: inline-block;"></i> ${p.location}</span>
-        <span><i data-lucide="linkedin" style="width: 13px; height: 13px; display: inline-block;"></i> LinkedIn: /in/${p.linkedinHandle}</span>
-      </div>
+    <div class="resume-doc paper-style">
+      <header class="resume-doc-header">
+        <h1 class="resume-name">Sakshi Rathod</h1>
+        <div class="resume-contact-line">
+          <span><i data-lucide="phone" style="width: 12px; height: 12px; display: inline-block;"></i> +91-9370865179</span>
+          <span class="sep">|</span>
+          <a href="mailto:rathodsakshi290@gmail.com" class="resume-link"><i data-lucide="mail" style="width: 12px; height: 12px; display: inline-block;"></i> rathodsakshi290@gmail.com</a>
+          <span class="sep">|</span>
+          <a href="https://linkedin.com/in/sakshi-rathod" target="_blank" rel="noopener noreferrer" class="resume-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            linkedin.com/in/sakshi-rathod
+          </a>
+          <span class="sep">|</span>
+          <span><i data-lucide="map-pin" style="width: 12px; height: 12px; display: inline-block;"></i> Nagpur, Maharashtra</span>
+        </div>
+      </header>
 
-      <div class="resume-section-heading">Executive Summary</div>
-      <p style="font-size: 0.925rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
-        ${p.bio}
-      </p>
+      <!-- OBJECTIVE -->
+      <section class="resume-sec">
+        <h2 class="resume-sec-title">OBJECTIVE</h2>
+        <p class="resume-sec-text">
+          Data Analyst with hands-on experience in Excel, SQL, Python, and Power BI. Skilled in data cleaning, dashboard development, exploratory data analysis, and transforming raw data into actionable business insights. Passionate about solving business problems through data-driven decision-making.
+        </p>
+      </section>
 
-      <div class="resume-section-heading">Professional Experience & Internships</div>
-      ${exp
-        .map(
-          (e) => `
-        <div class="resume-item-block">
-          <div class="resume-item-top">
-            <div>
-              <span class="resume-item-title">${e.role}</span> &mdash; 
-              <span class="resume-item-subtitle">${e.company}</span>
-            </div>
-            <span class="resume-item-date">${e.period} | ${e.location}</span>
+      <!-- EDUCATION -->
+      <section class="resume-sec">
+        <h2 class="resume-sec-title">EDUCATION</h2>
+        
+        <div class="resume-row-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">JD College of Engineering and Management</span>
+            <span class="resume-bold">Nagpur, Maharashtra</span>
           </div>
-          <ul class="resume-bullets">
-            ${e.highlights.map((h) => `<li>${h}</li>`).join("")}
+          <div class="resume-row-split">
+            <span>Bachelor of Technology in Artificial Intelligence | CGPA: 9.9/10</span>
+            <span class="resume-date">2023 – 2027</span>
+          </div>
+        </div>
+
+        <div class="resume-row-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">VMV Junior College</span>
+            <span class="resume-bold">Nagpur, Maharashtra</span>
+          </div>
+          <div class="resume-row-split">
+            <span>Higher Secondary Certificate (HSC) | 71.50%</span>
+            <span class="resume-date">2021 – 2023</span>
+          </div>
+        </div>
+
+        <div class="resume-row-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">Saroj High School</span>
+            <span class="resume-bold">Nagpur, Maharashtra</span>
+          </div>
+          <div class="resume-row-split">
+            <span>Secondary School Certificate (SSC) | 86%</span>
+            <span class="resume-date">2020 – 2021</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section class="resume-sec">
+        <h2 class="resume-sec-title">TECHNICAL SKILLS</h2>
+        <div class="resume-skills-block">
+          <div><strong>Programming Languages:</strong> Python, SQL, HTML, CSS, C</div>
+          <div><strong>Data Analytics &amp; Visualization:</strong> Power BI, Tableau, Advanced Excel, Google Sheets, Looker</div>
+          <div><strong>Database &amp; Tools:</strong> PostgreSQL, MySQL, Microsoft Office Suite (Excel, PowerPoint, Word)</div>
+          <div><strong>Core Competencies:</strong> Problem Solving, Teamwork, Communication, Leadership</div>
+          <div><strong>Designing:</strong> Figma, Canva</div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="resume-sec">
+        <h2 class="resume-sec-title">EXPERIENCE</h2>
+
+        <div class="resume-exp-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">Data Analyst Intern</span>
+            <span class="resume-bold">Mar 2026 – Present</span>
+          </div>
+          <div class="resume-sub-title">Planitt Solutions Pvt. Ltd.</div>
+          <ul class="resume-bullet-list">
+            <li>Collect, clean, and preprocess structured and unstructured data to ensure high-quality datasets for analysis.</li>
+            <li>Develop interactive dashboards and reports using Power BI to support business decision-making and performance monitoring.</li>
           </ul>
         </div>
-      `
-        )
-        .join("")}
 
-      <div class="resume-section-heading">Academic Education</div>
-      ${edu
-        .map(
-          (ed) => `
-        <div class="resume-item-block">
-          <div class="resume-item-top">
-            <div>
-              <span class="resume-item-title">${ed.degree}</span> &mdash; 
-              <span class="resume-item-subtitle">${ed.institution}</span>
-            </div>
-            <span class="resume-item-date">${ed.period} | ${ed.grade}</span>
+        <div class="resume-exp-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">AI/ML Intern</span>
+            <span class="resume-bold">Dec 2025 – Feb 2026</span>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">${ed.highlights}</p>
+          <div class="resume-sub-title">Infosys Springboard (Virtual Internship)</div>
+          <ul class="resume-bullet-list">
+            <li>Developed a predictive machine learning model to evaluate the potential habitability of exoplanets using real-world astronomical datasets.</li>
+            <li>Documented project findings and presented analytical results following industry best practices.</li>
+          </ul>
         </div>
-      `
-        )
-        .join("")}
 
-      <div class="resume-section-heading">Key Featured Analytics Projects</div>
-      ${projects
-        .slice(0, 3)
-        .map(
-          (proj) => `
-        <div class="resume-item-block">
-          <div class="resume-item-top">
-            <span class="resume-item-title">${proj.title}</span>
-            <span class="resume-item-date">${proj.year} | ${proj.categoryName}</span>
+        <div class="resume-exp-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">AI/ML Intern</span>
+            <span class="resume-bold">July 2025 – Aug 2025</span>
           </div>
-          <p style="font-size: 0.875rem; color: var(--text-secondary);">${proj.summary}</p>
-          <div style="font-size: 0.8rem; color: var(--accent-primary); font-weight: 600; margin-top: 0.25rem;">
-            Tools: ${proj.tools.join(", ")}
-          </div>
+          <div class="resume-sub-title">AICTE Edunet Foundation (Virtual Internship)</div>
+          <ul class="resume-bullet-list">
+            <li>Gained hands-on experience in AI concepts, Large Language Models (LLMs), and RAG architectures through guided learning modules and practical assignments.</li>
+          </ul>
         </div>
-      `
-        )
-        .join("")}
+      </section>
 
-      <div class="resume-section-heading">Technical Skills & Leadership</div>
-      <div style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.8;">
-        <div><strong>Programming Languages:</strong> Python (Pandas, NumPy, Scikit-learn), SQL (PostgreSQL, MySQL), JavaScript (ES6+), HTML5, CSS3, C</div>
-        <div><strong>Analytics & BI:</strong> Power BI (DAX, Power Query, Data Modeling), Tableau, Advanced Excel (Pivot Tables, XLOOKUP), Google Sheets</div>
-        <div><strong>Databases & Frameworks:</strong> PostgreSQL, MySQL, Flask REST APIs, Electron.js, Large Language Models (LLMs), RAG Architectures</div>
-        <div><strong>Leadership & Certifications:</strong> Google Developer Group Cloud Core Member, Academic Excellence Award (CGPA 9.9), Eduskill AICTE Fellowship, Deloitte Job Simulation</div>
-      </div>
+      <!-- PROJECTS -->
+      <section class="resume-sec">
+        <h2 class="resume-sec-title">PROJECTS</h2>
+
+        <div class="resume-exp-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">Meta Ad Performance Dashboard</span>
+            <span class="resume-bold">2026</span>
+          </div>
+          <div class="resume-sub-title">Power BI, Power Query, DAX, Excel, Data Visualization</div>
+          <ul class="resume-bullet-list">
+            <li>Designed and developed an interactive Power BI dashboard to analyze Meta (Facebook &amp; Instagram) advertising campaign performance.</li>
+          </ul>
+        </div>
+
+        <div class="resume-exp-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">ExoHabitAI – AI-Based Exoplanet Habitability Prediction</span>
+            <span class="resume-bold">2025</span>
+          </div>
+          <div class="resume-sub-title">Python, Pandas, NumPy, Scikit-learn, Flask</div>
+          <ul class="resume-bullet-list">
+            <li>Designed and developed an AI-powered system to classify potentially habitable exoplanets using machine learning techniques.</li>
+          </ul>
+        </div>
+
+        <div class="resume-exp-item">
+          <div class="resume-row-split">
+            <span class="resume-bold">Motorola Sales Analysis</span>
+            <span class="resume-bold">2025</span>
+          </div>
+          <div class="resume-sub-title">Power BI, SQL, Excel</div>
+          <ul class="resume-bullet-list">
+            <li>Analyzed sales data to identify trends, patterns, and key performance indicators for business insights.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+      <section class="resume-sec">
+        <h2 class="resume-sec-title">CERTIFICATIONS &amp; ACHIEVEMENTS</h2>
+        <ul class="resume-bullet-list" style="margin-top: 0.4rem;">
+          <li><strong>Google Developer Group:</strong> Google Cloud Core Team Member</li>
+          <li><strong>Academic Excellence Award:</strong> CGPA 9.8/10</li>
+          <li><strong>AI-ML &amp; Data Analytics Virtual Internship:</strong> Eduskill-AICTE certification program</li>
+          <li><strong>Deloitte Data Analytics Job Simulation:</strong> Hands-on experience with real-world analytics scenarios</li>
+        </ul>
+      </section>
     </div>
   `;
 
