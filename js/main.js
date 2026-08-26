@@ -930,182 +930,26 @@ window.openResumeModal = function () {
 
   modalBody.innerHTML = `
     <div class="resume-header-actions">
-      <span class="timeline-period-badge" style="background: var(--bg-card-solid);">
-        <i data-lucide="file-text" style="width: 13px; height: 13px; display: inline-block;"></i> Official Resume &bull; Sakshi Rathod
-      </span>
-      <div style="display: flex; gap: 0.6rem;">
-        <button class="btn btn-sm btn-primary" onclick="window.print()">
-          <i data-lucide="printer"></i> Print / Save PDF
-        </button>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="timeline-period-badge" style="background: var(--bg-card-solid);">
+          <i data-lucide="file-text" style="width: 13px; height: 13px; display: inline-block;"></i> Official Resume &bull; Sakshi Rathod
+        </span>
+      </div>
+      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
+        <a href="assets/Sakshi_Rathod_Resume.pdf" download="Sakshi_Rathod_Resume.pdf" class="btn btn-sm btn-primary" title="Download exact original PDF">
+          <i data-lucide="download"></i> Download PDF
+        </a>
+        <a href="assets/Sakshi_Rathod_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary" title="Open PDF in new tab">
+          <i data-lucide="external-link"></i> Open Fullscreen
+        </a>
         <button class="btn btn-sm btn-secondary" onclick="closeResumeModal()">
           <i data-lucide="x"></i> Close
         </button>
       </div>
     </div>
 
-    <div class="resume-doc paper-style">
-      <header class="resume-doc-header">
-        <h1 class="resume-name">Sakshi Rathod</h1>
-        <div class="resume-contact-line">
-          <span><i data-lucide="phone" style="width: 12px; height: 12px; display: inline-block;"></i> +91-9370865179</span>
-          <span class="sep">|</span>
-          <a href="mailto:rathodsakshi290@gmail.com" class="resume-link"><i data-lucide="mail" style="width: 12px; height: 12px; display: inline-block;"></i> rathodsakshi290@gmail.com</a>
-          <span class="sep">|</span>
-          <a href="https://linkedin.com/in/sakshi-rathod" target="_blank" rel="noopener noreferrer" class="resume-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            linkedin.com/in/sakshi-rathod
-          </a>
-          <span class="sep">|</span>
-          <span><i data-lucide="map-pin" style="width: 12px; height: 12px; display: inline-block;"></i> Nagpur, Maharashtra</span>
-        </div>
-      </header>
-
-      <!-- OBJECTIVE -->
-      <section class="resume-sec">
-        <h2 class="resume-sec-title">OBJECTIVE</h2>
-        <p class="resume-sec-text">
-          Data Analyst with hands-on experience in Excel, SQL, Python, and Power BI. Skilled in data cleaning, dashboard development, exploratory data analysis, and transforming raw data into actionable business insights. Passionate about solving business problems through data-driven decision-making.
-        </p>
-      </section>
-
-      <!-- EDUCATION -->
-      <section class="resume-sec">
-        <h2 class="resume-sec-title">EDUCATION</h2>
-        
-        <div class="resume-row-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">JD College of Engineering and Management</span>
-            <span class="resume-bold">Nagpur, Maharashtra</span>
-          </div>
-          <div class="resume-row-split">
-            <span>Bachelor of Technology in Artificial Intelligence | CGPA: 9.9/10</span>
-            <span class="resume-date">2023 – 2027</span>
-          </div>
-        </div>
-
-        <div class="resume-row-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">VMV Junior College</span>
-            <span class="resume-bold">Nagpur, Maharashtra</span>
-          </div>
-          <div class="resume-row-split">
-            <span>Higher Secondary Certificate (HSC) | 71.50%</span>
-            <span class="resume-date">2021 – 2023</span>
-          </div>
-        </div>
-
-        <div class="resume-row-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">Saroj High School</span>
-            <span class="resume-bold">Nagpur, Maharashtra</span>
-          </div>
-          <div class="resume-row-split">
-            <span>Secondary School Certificate (SSC) | 86%</span>
-            <span class="resume-date">2020 – 2021</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- TECHNICAL SKILLS -->
-      <section class="resume-sec">
-        <h2 class="resume-sec-title">TECHNICAL SKILLS</h2>
-        <div class="resume-skills-block">
-          <div><strong>Programming Languages:</strong> Python, SQL, HTML, CSS, C</div>
-          <div><strong>Data Analytics &amp; Visualization:</strong> Power BI, Tableau, Advanced Excel, Google Sheets, Looker</div>
-          <div><strong>Database &amp; Tools:</strong> PostgreSQL, MySQL, Microsoft Office Suite (Excel, PowerPoint, Word)</div>
-          <div><strong>Core Competencies:</strong> Problem Solving, Teamwork, Communication, Leadership</div>
-          <div><strong>Designing:</strong> Figma, Canva</div>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section class="resume-sec">
-        <h2 class="resume-sec-title">EXPERIENCE</h2>
-
-        <div class="resume-exp-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">Data Analyst Intern</span>
-            <span class="resume-bold">Mar 2026 – Present</span>
-          </div>
-          <div class="resume-sub-title">Planitt Solutions Pvt. Ltd.</div>
-          <ul class="resume-bullet-list">
-            <li>Collect, clean, and preprocess structured and unstructured data to ensure high-quality datasets for analysis.</li>
-            <li>Develop interactive dashboards and reports using Power BI to support business decision-making and performance monitoring.</li>
-          </ul>
-        </div>
-
-        <div class="resume-exp-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">AI/ML Intern</span>
-            <span class="resume-bold">Dec 2025 – Feb 2026</span>
-          </div>
-          <div class="resume-sub-title">Infosys Springboard (Virtual Internship)</div>
-          <ul class="resume-bullet-list">
-            <li>Developed a predictive machine learning model to evaluate the potential habitability of exoplanets using real-world astronomical datasets.</li>
-            <li>Documented project findings and presented analytical results following industry best practices.</li>
-          </ul>
-        </div>
-
-        <div class="resume-exp-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">AI/ML Intern</span>
-            <span class="resume-bold">July 2025 – Aug 2025</span>
-          </div>
-          <div class="resume-sub-title">AICTE Edunet Foundation (Virtual Internship)</div>
-          <ul class="resume-bullet-list">
-            <li>Gained hands-on experience in AI concepts, Large Language Models (LLMs), and RAG architectures through guided learning modules and practical assignments.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section class="resume-sec">
-        <h2 class="resume-sec-title">PROJECTS</h2>
-
-        <div class="resume-exp-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">Meta Ad Performance Dashboard</span>
-            <span class="resume-bold">2026</span>
-          </div>
-          <div class="resume-sub-title">Power BI, Power Query, DAX, Excel, Data Visualization</div>
-          <ul class="resume-bullet-list">
-            <li>Designed and developed an interactive Power BI dashboard to analyze Meta (Facebook &amp; Instagram) advertising campaign performance.</li>
-          </ul>
-        </div>
-
-        <div class="resume-exp-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">ExoHabitAI – AI-Based Exoplanet Habitability Prediction</span>
-            <span class="resume-bold">2025</span>
-          </div>
-          <div class="resume-sub-title">Python, Pandas, NumPy, Scikit-learn, Flask</div>
-          <ul class="resume-bullet-list">
-            <li>Designed and developed an AI-powered system to classify potentially habitable exoplanets using machine learning techniques.</li>
-          </ul>
-        </div>
-
-        <div class="resume-exp-item">
-          <div class="resume-row-split">
-            <span class="resume-bold">Motorola Sales Analysis</span>
-            <span class="resume-bold">2025</span>
-          </div>
-          <div class="resume-sub-title">Power BI, SQL, Excel</div>
-          <ul class="resume-bullet-list">
-            <li>Analyzed sales data to identify trends, patterns, and key performance indicators for business insights.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS & ACHIEVEMENTS -->
-      <section class="resume-sec">
-        <h2 class="resume-sec-title">CERTIFICATIONS &amp; ACHIEVEMENTS</h2>
-        <ul class="resume-bullet-list" style="margin-top: 0.4rem;">
-          <li><strong>Google Developer Group:</strong> Google Cloud Core Team Member</li>
-          <li><strong>Academic Excellence Award:</strong> CGPA 9.8/10</li>
-          <li><strong>AI-ML &amp; Data Analytics Virtual Internship:</strong> Eduskill-AICTE certification program</li>
-          <li><strong>Deloitte Data Analytics Job Simulation:</strong> Hands-on experience with real-world analytics scenarios</li>
-        </ul>
-      </section>
+    <div class="resume-pdf-wrapper">
+      <iframe src="assets/Sakshi_Rathod_Resume.pdf#toolbar=1&navpanes=0" class="resume-pdf-frame" title="Sakshi Rathod Original Resume"></iframe>
     </div>
   `;
 
