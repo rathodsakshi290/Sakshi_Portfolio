@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sakshi Rathod | Data Analyst & AI Engineer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Sakshi Rathod - Data Analyst with hands-on expertise in Excel, SQL, Python, Power BI, and Machine Learning. Discover interactive dashboards, projects, and case studies." />
+  <meta name="keywords"
+    content="Sakshi Rathod, Data Analyst, Power BI, Python, SQL, Machine Learning, AI Engineer, Portfolio, Nagpur" />
+  <meta name="author" content="Sakshi Rathod" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Sakshi Rathod | Data Analyst & AI Engineer" />
+  <meta property="og:description"
+    content="Data Analyst experienced in Power BI, SQL, Python, and predictive AI solutions." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Playfair Display, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js for Data Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Ambient Light Orbs & Particle Canvas -->
+  <div class="bg-ambient-orb orb-1"></div>
+  <div class="bg-ambient-orb orb-2"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Custom Cursor / Amber Aura -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-aura"></div>
+
+  <!-- Navigation Header -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Sakshi Rathod Home">
+        <div class="brand-monogram">SR</div>
+        <span>Sakshi Rathod</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#sandbox" class="nav-link">Live Sandbox</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education &amp; Honors</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="audio-toggle" class="audio-toggle-btn" aria-label="Toggle sound feedback" title="Toggle Sound Feedback">
+          <i data-lucide="volume-x"></i>
+        </button>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme mode" title="Toggle Theme">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="btn btn-sm btn-secondary open-resume-btn" title="View Executive Resume">Resume</button>
+        <a href="#contact" class="btn btn-sm btn-primary">Hire Me</a>
+        <button id="mobile-toggle" class="mobile-menu-btn" aria-label="Open navigation menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <main>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal-on-scroll">
+          <div class="hero-status-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for Data Analyst &amp; AI Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="name-highlight">Sakshi Rathod</span>.<br />
+            Data Analyst.
+          </h1>
+
+          <div class="hero-typewriter-container">
+            <span>Specializing in:</span>
+            <span class="typewriter-text" id="typewriter-role">Data Analyst</span>
+          </div>
+
+          <p class="hero-bio">
+            Transforming raw, complex datasets into high-fidelity dashboards, predictive machine learning models, and
+            executive business insights. Skilled in <strong>Power BI, SQL, Python, Excel</strong> and modern AI
+            frameworks.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="layers"></i>
+              <span>Explore Projects</span>
+            </a>
+            <button class="btn btn-secondary open-resume-btn">
+              <i data-lucide="file-text"></i>
+              <span>View Resume</span>
+            </button>
+            <a href="#sandbox" class="btn btn-secondary">
+              <i data-lucide="activity"></i>
+              <span>Interactive Sandbox</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i data-lucide="send"></i>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <div class="hero-contact-quick">
+            <a href="mailto:rathodsakshi290@gmail.com" class="quick-link" title="Send Email">
+              <i data-lucide="mail"></i>
+              <span>rathodsakshi290@gmail.com</span>
+            </a>
+            <span style="color: var(--border-medium);">|</span>
+            <a href="https://www.linkedin.com/in/sakshi-rathod-1499532bb" target="_blank" rel="noopener noreferrer"
+              class="quick-link" title="LinkedIn Profile">
+              <i data-lucide="linkedin"></i>
+              <span>Connect on LinkedIn</span>
+            </a>
+            <span style="color: var(--border-medium);">|</span>
+            <span class="quick-link">
+              <i data-lucide="map-pin"></i>
+              <span>Nagpur, India</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Hero Visual Bento Showcase -->
+        <div class="hero-visual-wrapper reveal-on-scroll delay-1">
+          <!-- Floating Feature Pills -->
+          <div class="floating-chip chip-1">
+            <i data-lucide="sparkles" style="color: var(--accent-primary);"></i>
+            <span>9.9 / 10 B.Tech CGPA</span>
+          </div>
+          <div class="floating-chip chip-2">
+            <i data-lucide="database" style="color: var(--accent-primary);"></i>
+            <span>Power BI &amp; SQL Specialist</span>
+          </div>
+
+          <div class="hero-main-card glass-card">
+            <div class="hero-avatar-area">
+              <img src="assets/avatar.jpg" alt="Sakshi Rathod Portrait" class="hero-avatar-img" />
+              <div class="avatar-info">
+                <h3>Sakshi Rathod</h3>
+                <p>B.Tech in Artificial Intelligence (2023–2027)</p>
+                <p style="font-size: 0.775rem; color: var(--accent-primary); font-weight: 700; margin-top: 0.2rem;">
+                  Google Developer Group Cloud Core Member
+                </p>
+              </div>
+            </div>
+
+            <!-- Quick Metrics Grid with Animated Counters -->
+            <div class="hero-stats-mini-grid" id="hero-stats-container">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div
+              style="background: var(--bg-card-solid); padding: 1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <i data-lucide="briefcase" style="color: var(--accent-primary);"></i>
+                <span style="font-size: 0.85rem; font-weight: 600;">Planitt Solutions Pvt. Ltd.</span>
+              </div>
+              <span class="timeline-period-badge" style="font-size: 0.75rem; padding: 0.2rem 0.6rem;">Current
+                Intern</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. About & Mission Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <i data-lucide="user"></i>
+            <span>Objective &amp; Philosophy</span>
+          </div>
+          <h2 class="section-title">Bridging Raw Data &amp; <span class="editorial">Strategic Decisions</span></h2>
+          <p class="section-desc">
+            Passionate about transforming unorganized, messy datasets into clear analytical narratives, executive visual
+            dashboards, and high-impact machine learning algorithms.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
+          <div class="glass-card reveal-on-scroll" style="padding: 2rem;">
+            <div class="comp-icon"><i data-lucide="database"></i></div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">
+              Data Cleansing &amp; Pipeline ETL</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Expertise in preprocessing noisy structured and unstructured datasets using SQL, Power Query, and Python
+              Pandas to guarantee 100% data reliability.
+            </p>
+          </div>
+
+          <div class="glass-card reveal-on-scroll delay-1" style="padding: 2rem;">
+            <div class="comp-icon"><i data-lucide="bar-chart-2"></i></div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">
+              Executive Dashboards &amp; DAX</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Crafting interactive Power BI and Tableau dashboards with custom DAX calculations, scenario analysis,
+              funnel analytics, and automated reporting.
+            </p>
+          </div>
+
+          <div class="glass-card reveal-on-scroll delay-2" style="padding: 2rem;">
+            <div class="comp-icon"><i data-lucide="cpu"></i></div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">
+              Predictive AI &amp; Machine Learning</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Developing machine learning pipelines from NASA exoplanet habitability classifiers to generative AI &amp;
+              RAG architectures.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Interactive Data Analytics Sandbox -->
+    <section id="sandbox" class="sandbox-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <i data-lucide="sparkles"></i>
+            <span>Interactive Data Sandbox</span>
+          </div>
+          <h2 class="section-title">Live Analytics &amp; <span class="editorial">Interactive Playground</span></h2>
+          <p class="section-desc">
+            Explore interactive live simulations of Sakshi's analytical projects. Switch datasets to inspect real-time
+            chart models, metrics, or test the live SQL and DAX execution playground.
+          </p>
+        </div>
+
+        <div class="sandbox-container reveal-on-scroll">
+          <!-- Sandbox Controls / Tabs -->
+          <div class="sandbox-controls">
+            <button class="sandbox-tab-btn active" data-preset="metaAd">
+              <div class="tab-icon"><i data-lucide="bar-chart-2"></i></div>
+              <div class="tab-info">
+                <h4>Meta Ad Performance</h4>
+                <p>ROAS Multiplier vs. Conversion Rate</p>
+              </div>
+            </button>
+
+            <button class="sandbox-tab-btn" data-preset="exoplanet">
+              <div class="tab-icon"><i data-lucide="radar"></i></div>
+              <div class="tab-info">
+                <h4>ExoHabitAI Habitability</h4>
+                <p>NASA Planetary Parameter Radar</p>
+              </div>
+            </button>
+
+            <button class="sandbox-tab-btn" data-preset="sales">
+              <div class="tab-icon"><i data-lucide="trending-up"></i></div>
+              <div class="tab-info">
+                <h4>Motorola Sales Growth</h4>
+                <p>Revenue &amp; Margin Forecaster</p>
+              </div>
+            </button>
+
+            <button class="sandbox-tab-btn" data-preset="sqlPlayground">
+              <div class="tab-icon"><i data-lucide="terminal"></i></div>
+              <div class="tab-info">
+                <h4>SQL &amp; DAX Explorer</h4>
+                <p>Live Multi-Table Query Simulator</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Interactive Chart Viewer Card -->
+          <div class="sandbox-viewer-card glass-card" id="sandbox-chart-view">
+            <div class="sandbox-header">
+              <div class="sandbox-header-info">
+                <h3 id="sandbox-chart-title">Meta Ad Campaign Performance</h3>
+                <p id="sandbox-chart-subtitle">ROAS vs. Conversions across Ad Placements</p>
+              </div>
+              <span class="timeline-period-badge" style="background: var(--bg-card-solid);">
+                <i data-lucide="zap" style="width: 12px; height: 12px; display: inline-block;"></i> Live Chart.js
+                Visualizer
+              </span>
+            </div>
+
+            <!-- Canvas Container -->
+            <div class="sandbox-chart-box">
+              <canvas id="sandbox-canvas"></canvas>
+            </div>
+
+            <!-- Summary KPI Strip -->
+            <div class="sandbox-kpi-row">
+              <div class="sandbox-kpi-item">
+                <div class="label">Primary Metric</div>
+                <div class="value">+38% Lift</div>
+              </div>
+              <div class="sandbox-kpi-item">
+                <div class="label">Optimization</div>
+                <div class="value">-24% CPA</div>
+              </div>
+              <div class="sandbox-kpi-item">
+                <div class="label">Confidence / Quality</div>
+                <div class="value">94.2% ML</div>
+              </div>
+              <div class="sandbox-kpi-item">
+                <div class="label">Data Source</div>
+                <div class="value">Cleaned ETL</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive SQL & DAX Playground Card (Dynamic) -->
+          <div class="sandbox-viewer-card glass-card" id="sandbox-playground-view" style="display: none;">
+            <!-- Rendered dynamically via main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Experience & Internships Section -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <i data-lucide="briefcase"></i>
+            <span>Professional Journey</span>
+          </div>
+          <h2 class="section-title">Industry <span class="editorial">Experience &amp; Internships</span></h2>
+          <p class="section-desc">
+            Hands-on corporate and virtual internships applying data analytics, Power BI engineering, machine learning
+            modeling, and generative AI.
+          </p>
+        </div>
+
+        <div class="experience-timeline" id="experience-timeline-container">
+          <!-- Rendered dynamically from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Featured Projects Section -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <i data-lucide="folder-git-2"></i>
+            <span>Curated Portfolio</span>
+          </div>
+          <h2 class="section-title">Featured <span class="editorial">Analytics &amp; AI Projects</span></h2>
+          <p class="section-desc">
+            Comprehensive business intelligence dashboards, astronomical machine learning predictors, and multi-region
+            SQL analytics systems.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters reveal-on-scroll">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="powerbi">Power BI &amp; Dashboards</button>
+          <button class="filter-btn" data-filter="aiml">AI &amp; Machine Learning</button>
+          <button class="filter-btn" data-filter="sql">SQL &amp; Analytics</button>
+        </div>
+
+        <!-- Projects Bento Grid -->
+        <div class="projects-grid" id="projects-grid-container">
+          <!-- Rendered dynamically from data.js with visual thumbnails -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Technical Skills & Core Competencies -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <i data-lucide="check-square"></i>
+            <span>Technical Expertise</span>
+          </div>
+          <h2 class="section-title">Skills &amp; <span class="editorial">Technology Stack</span></h2>
+          <p class="section-desc">
+            Comprehensive toolset spanning programming languages, business intelligence suites, database management, and
+            UI/UX design.
+          </p>
+        </div>
+
+        <!-- 3-Column Skills Grid -->
+        <div class="skills-grid">
+          <!-- Programming -->
+          <div class="skill-category-card glass-card reveal-on-scroll">
+            <div class="skill-cat-title">
+              <i data-lucide="code"></i>
+              <span>Programming Languages</span>
+            </div>
+            <div class="skill-items-list" id="skills-programming">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Data Analytics & Visualization -->
+          <div class="skill-category-card glass-card reveal-on-scroll delay-1">
+            <div class="skill-cat-title">
+              <i data-lucide="bar-chart"></i>
+              <span>Analytics &amp; Visualization</span>
+            </div>
+            <div class="skill-items-list" id="skills-analytics">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Databases & Tools -->
+          <div class="skill-category-card glass-card reveal-on-scroll delay-2">
+            <div class="skill-cat-title">
+              <i data-lucide="database"></i>
+              <span>Databases, AI &amp; Tools</span>
+            </div>
+            <div class="skill-items-list" id="skills-db">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Competencies Bento Strip -->
+        <div class="section-header" style="margin-top: 4.5rem; margin-bottom: 2rem;">
+          <div class="section-badge">
+            <i data-lucide="award"></i>
+            <span>Soft Skills &amp; Leadership</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700;">Core Competencies</h3>
+        </div>
+
+        <div class="competencies-grid" id="competencies-container">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Education & Certifications -->
+    <section id="education" class="education-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <i data-lucide="graduation-cap"></i>
+            <span>Academic Distinction</span>
+          </div>
+          <h2 class="section-title">Education &amp; <span class="editorial">Achievements</span></h2>
+          <p class="section-desc">
+            Academic track record with 9.9 CGPA, Google Developer Group leadership, and verified industry credentials.
+          </p>
+        </div>
+
+        <div class="dual-col-grid">
+          <!-- Education Column -->
+          <div class="edu-cert-col">
+            <h3>
+              <i data-lucide="graduation-cap"></i>
+              <span>Academic Education</span>
+            </h3>
+            <div id="education-list-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Certifications Column -->
+          <div class="edu-cert-col">
+            <h3>
+              <i data-lucide="trophy"></i>
+              <span>Certifications &amp; Honors</span>
+            </h3>
+            <div id="certifications-list-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Contact & Connect Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-badge">
+            <i data-lucide="mail"></i>
+            <span>Let's Connect</span>
+          </div>
+          <h2 class="section-title">Get in Touch with <span class="editorial">Sakshi</span></h2>
+          <p class="section-desc">
+            Open for full-time Data Analyst roles, internships, collaborative AI initiatives, and freelance consulting.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Contact Card -->
+          <div class="contact-info-card glass-card reveal-on-scroll">
+            <h3>Let's build something data-driven together.</h3>
+            <p>
+              Whether you need automated business intelligence dashboards, advanced exploratory data analysis, or
+              machine learning pipelines, feel free to reach out directly.
+            </p>
+
+            <div class="contact-methods-list">
+              <!-- Email -->
+              <div class="contact-method-item">
+                <div class="contact-icon-box"><i data-lucide="mail"></i></div>
+                <div class="contact-detail-text">
+                  <div class="method-lbl">Email Address</div>
+                  <div class="method-val">rathodsakshi290@gmail.com</div>
+                </div>
+                <button id="copy-email-btn" class="contact-copy-btn" title="Copy email to clipboard">Copy Email</button>
+              </div>
+
+              <!-- Phone -->
+              <a href="tel:+919370865179" class="contact-method-item" style="color: inherit;">
+                <div class="contact-icon-box"><i data-lucide="phone"></i></div>
+                <div class="contact-detail-text">
+                  <div class="method-lbl">Phone Number</div>
+                  <div class="method-val">+91-9370865179</div>
+                </div>
+                <span class="contact-copy-btn">Call</span>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/sakshi-rathod-1499532bb" target="_blank" rel="noopener noreferrer"
+                class="contact-method-item" style="color: inherit;">
+                <div class="contact-icon-box"><i data-lucide="linkedin"></i></div>
+                <div class="contact-detail-text">
+                  <div class="method-lbl">LinkedIn Profile</div>
+                  <div class="method-val">https://www.linkedin.com/in/sakshi-rathod-1499532bb</div>
+                </div>
+                <span class="contact-copy-btn">Connect <i data-lucide="external-link"
+                    style="width: 12px; height: 12px; display: inline-block;"></i></span>
+              </a>
+
+              <!-- Location -->
+              <div class="contact-method-item">
+                <div class="contact-icon-box"><i data-lucide="map-pin"></i></div>
+                <div class="contact-detail-text">
+                  <div class="method-lbl">Location</div>
+                  <div class="method-val">Nagpur, Maharashtra, India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-card glass-card reveal-on-scroll delay-1">
+            <h3>Send a Direct Note</h3>
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-name">Your Name *</label>
+                <input type="text" id="form-name" class="form-control" placeholder="e.g. John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Your Email Address *</label>
+                <input type="email" id="form-email" class="form-control" placeholder="john@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Subject / Project Type</label>
+                <input type="text" id="form-subject" class="form-control"
+                  placeholder="e.g. Data Analyst Role / Dashboard Inquiry" />
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message *</label>
+                <textarea id="form-message" class="form-control"
+                  placeholder="Tell me about your team, project, or data requirements..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i data-lucide="send"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" id="project-modal" onclick="if(event.target === this) closeProjectModal()">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="modal-body-content">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Executive Resume Modal -->
+  <div class="modal-overlay" id="resume-modal" onclick="if(event.target === this) closeResumeModal()">
+    <div class="resume-modal-container">
+      <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close resume modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="resume-modal-body">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <div class="brand-monogram">SR</div>
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800;">Sakshi Rathod</div>
+            <div style="font-size: 0.825rem; color: var(--text-muted);">Data Analyst &amp; AI Specialist</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+          <button class="quick-link open-resume-btn" style="background: none; border: none; cursor: pointer; font: inherit;">
+            <i data-lucide="file-text"></i> Resume
+          </button>
+          <a href="https://www.linkedin.com/in/sakshi-rathod-1499532bb" target="_blank" rel="noopener noreferrer"
+            class="quick-link">
+            <i data-lucide="linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:rathodsakshi290@gmail.com" class="quick-link">
+            <i data-lucide="mail"></i> Email
+          </a>
+          <button id="scroll-top-btn" class="scroll-top-btn" title="Back to top" aria-label="Scroll to top">
+            <i data-lucide="arrow-up"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Sakshi Rathod. Crafted with Warm Brown &amp; Beige Elegance.</div>
+        <div>Nagpur, Maharashtra &bull; Available for Global Opportunities</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
