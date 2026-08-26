@@ -1053,7 +1053,7 @@ function initKeyboardListeners() {
 }
 
 /* --------------------------------------------------------------------------
-   17. Contact Form, Email Copy & Toast Notifications
+   17. Contact Form, Direct Email Inbox Delivery & Toast Notifications
    -------------------------------------------------------------------------- */
 function initContactActions() {
   // Direct Email Copy
@@ -1072,12 +1072,12 @@ function initContactActions() {
   // Contact Form Submission
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const name = document.getElementById("form-name").value;
-      const email = document.getElementById("form-email").value;
-      const subject = document.getElementById("form-subject").value;
-      const message = document.getElementById("form-message").value;
+      const name = document.getElementById("form-name").value.trim();
+      const email = document.getElementById("form-email").value.trim();
+      const subject = document.getElementById("form-subject").value.trim() || "Inquiry from Portfolio Website";
+      const message = document.getElementById("form-message").value.trim();
 
       if (!name || !email || !message) {
         showToast("Please fill in all required fields.", "alert-circle");
@@ -1086,17 +1086,52 @@ function initContactActions() {
 
       const submitBtn = contactForm.querySelector("button[type='submit']");
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = `Sending Note...`;
+      submitBtn.innerHTML = `<i data-lucide="loader-2" class="spin"></i> <span>Sending Message...</span>`;
       submitBtn.disabled = true;
+      if (window.lucide) window.lucide.createIcons();
 
-      setTimeout(() => {
-        showToast(`Thank you, ${name}! Your message has been prepared for Sakshi.`, "check");
-        contactForm.reset();
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }, 1000);
+      // Check if a Formspree action endpoint is configured on the form
+      const formAction = contactForm.getAttribute("action");
+      if (formAction && formAction.startsWith("https://formspree.io/")) {
+        try {
+          const response = await fetch(formAction, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({ name, email, subject, message })
+          });
+
+          if (response.ok) {
+            showToast(`Thank you, ${name}! Your message has been sent directly to Sakshi's inbox.`, "check");
+            contactForm.reset();
+          } else {
+            throw new Error("Formspree response not OK");
+          }
+        } catch (err) {
+          // Fallback to mailto
+          openMailtoFallback(name, email, subject, message);
+        }
+      } else {
+        // Direct pre-filled email client fallback
+        openMailtoFallback(name, email, subject, message);
+      }
+
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      if (window.lucide) window.lucide.createIcons();
     });
   }
+}
+
+function openMailtoFallback(name, email, subject, message) {
+  const mailtoBody = encodeURIComponent(
+    `Hi Sakshi,\n\n${message}\n\n---\nSender Name: ${name}\nSender Email: ${email}`
+  );
+  const mailtoUrl = `mailto:rathodsakshi290@gmail.com?subject=${encodeURIComponent(subject)}&body=${mailtoBody}`;
+
+  showToast(`Opening your email app to send directly to rathodsakshi290@gmail.com...`, "check");
+  setTimeout(() => {
+    window.location.href = mailtoUrl;
+  }, 400);
 }
 
 function showToast(message, iconType = "check") {
