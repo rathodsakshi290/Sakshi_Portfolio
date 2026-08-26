@@ -226,9 +226,10 @@ function initTypewriter() {
 
   const roles = [
     "Data Analyst",
-    "Power BI & DAX Specialist",
-    "AI / ML Engineer",
-    "Business Intelligence Explorer"
+    "BI Developer",
+    "Business Analyst",
+    "SQL Developer",
+    "AI/ML Engineer"
   ];
 
   let roleIndex = 0;
