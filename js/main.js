@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactActions();
   initResumeModal();
   initKeyboardListeners();
+  if (window.lucide) window.lucide.createIcons();
 });
 
 /* --------------------------------------------------------------------------
