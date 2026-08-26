@@ -1,4 +1,4 @@
-# Sakshi Rathod — Data Analyst & AI Specialist Portfolio 📊
+# Sakshi Rathod — Data Analyst Portfolio 📊
 
 [![Live Demo](https://img.shields.io/badge/Live_Portfolio-rathodsakshi290.github.io%2FSakshi__Portfolio-success?style=for-the-badge&logo=githubpages&logoColor=white)](https://rathodsakshi290.github.io/Sakshi_Portfolio/)
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Automated_Deploy-blue?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/rathodsakshi290/Sakshi_Portfolio/actions)
