@@ -1995,14 +1995,15 @@ textarea.form-control {
 }
 
 /* --- Crisp Authentic Resume Document Styling --- */
+/* --- Crisp Authentic Resume Document Styling --- */
 .resume-doc.paper-style {
   background: #FFFFFF;
   color: #111111;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 2.5rem;
+  padding: 1.5rem 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.4;
   box-shadow: var(--shadow-sm);
 }
 
@@ -2014,15 +2015,15 @@ textarea.form-control {
 
 .resume-doc-header {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.6rem;
 }
 
 .resume-name {
   font-family: var(--font-heading), sans-serif;
-  font-size: 2.4rem;
+  font-size: 1.85rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.15rem;
   color: inherit;
 }
 
@@ -2031,14 +2032,14 @@ textarea.form-control {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.85rem;
+  gap: 0.45rem;
+  font-size: 0.825rem;
   color: inherit;
   opacity: 0.9;
 }
 
 .resume-contact-line .sep {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .resume-link {
@@ -2046,7 +2047,7 @@ textarea.form-control {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 
 .resume-link:hover {
@@ -2055,35 +2056,35 @@ textarea.form-control {
 }
 
 .resume-sec {
-  margin-top: 1.25rem;
+  margin-top: 0.7rem;
 }
 
 .resume-sec-title {
-  font-size: 1.05rem;
+  font-size: 0.925rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-bottom: 1.5px solid currentColor;
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.6rem;
+  padding-bottom: 0.12rem;
+  margin-bottom: 0.35rem;
   color: inherit;
 }
 
 .resume-sec-text {
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.42;
   text-align: justify;
 }
 
 .resume-row-item {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.35rem;
 }
 
 .resume-row-split {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .resume-bold {
@@ -2096,34 +2097,34 @@ textarea.form-control {
 }
 
 .resume-skills-block {
-  font-size: 0.9rem;
-  line-height: 1.65;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .resume-skills-block div {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.12rem;
 }
 
 .resume-exp-item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.55rem;
 }
 
 .resume-sub-title {
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   font-style: italic;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.15rem;
   opacity: 0.9;
 }
 
 .resume-bullet-list {
-  padding-left: 1.35rem;
-  font-size: 0.875rem;
-  line-height: 1.55;
-  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  font-size: 0.825rem;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
 }
 
 .resume-bullet-list li {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
 }
 
 /* Audio Toggle Button */
@@ -2151,30 +2152,151 @@ textarea.form-control {
   border-color: var(--accent-primary);
 }
 
+/* --- Executive ATS Single-Page Print Optimization --- */
 @media print {
-  body * {
-    visibility: hidden !important;
+  @page {
+    size: A4 portrait;
+    margin: 8mm 12mm;
   }
-  #resume-modal, #resume-modal * {
-    visibility: visible !important;
-  }
-  #resume-modal {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
+
+  html, body {
+    background: #FFFFFF !important;
+    color: #111111 !important;
     height: auto !important;
-    background: #FFF !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    overflow: visible !important;
+    margin: 0 !important;
     padding: 0 !important;
-    opacity: 1 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .modal-close-btn, .resume-header-actions, .navbar, .site-footer {
+
+  /* Completely remove background elements from print layout box flow */
+  body > *:not(#resume-modal),
+  .bg-ambient-orb,
+  #particle-canvas,
+  .cursor-dot,
+  .cursor-aura,
+  .navbar,
+  main,
+  #project-modal,
+  #toast-container,
+  .site-footer,
+  .modal-close-btn,
+  .resume-header-actions {
     display: none !important;
   }
-  .resume-doc {
+
+  #resume-modal {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .resume-modal-container {
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-doc.paper-style {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #FFFFFF !important;
+    color: #111111 !important;
+    font-size: 9pt !important;
+    line-height: 1.28 !important;
+  }
+
+  .resume-doc-header {
+    margin-bottom: 4pt !important;
+  }
+
+  .resume-name {
+    font-size: 16pt !important;
+    margin-bottom: 2pt !important;
+    color: #000000 !important;
+  }
+
+  .resume-contact-line {
+    font-size: 7.8pt !important;
+    gap: 3pt !important;
+    color: #222222 !important;
+  }
+
+  .resume-sec {
+    margin-top: 4.5pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .resume-sec-title {
+    font-size: 8.8pt !important;
+    border-bottom: 1.2pt solid #000000 !important;
+    padding-bottom: 1pt !important;
+    margin-bottom: 2.5pt !important;
+    color: #000000 !important;
+  }
+
+  .resume-sec-text {
+    font-size: 8.2pt !important;
+    line-height: 1.28 !important;
+    text-align: justify !important;
+  }
+
+  .resume-row-item {
+    margin-bottom: 2pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .resume-row-split {
+    font-size: 8.2pt !important;
+  }
+
+  .resume-skills-block {
+    font-size: 8.2pt !important;
+    line-height: 1.3 !important;
+  }
+
+  .resume-skills-block div {
+    margin-bottom: 1pt !important;
+  }
+
+  .resume-exp-item {
+    margin-bottom: 3pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .resume-sub-title {
+    font-size: 8pt !important;
+    margin-bottom: 1pt !important;
+  }
+
+  .resume-bullet-list {
+    padding-left: 11pt !important;
+    font-size: 8.2pt !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1.5pt !important;
+  }
+
+  .resume-bullet-list li {
+    margin-bottom: 0.8pt !important;
   }
 }
 
